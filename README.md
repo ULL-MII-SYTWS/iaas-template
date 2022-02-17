@@ -101,5 +101,32 @@ nvm install node
 
 ### Shell Prompt
 
+[Starship](https://starship.rs/es-es/) es un prompt para la terminal escrito en *Rust*.<br>
+Es muy configurable. Se integra con *git* para reflejar el estado del repositorio.
+
+![Prompt](./docs/static/prompt.png)
+
 ## Desplegar una aplicación web
+
+Como ejemplo, se usa una aplicación desarrollada en este [repositorio](https://github.com/crguezl/express-start).
+
+Tras clonarlo, se modifica el código servidor para escuchar en el puerto `80`.
+```bash
+git clone git@github.com:crguezl/express-start.git
+cd express-start/hello/
+vim hello.js
+```
+
+![Puerto](./docs/static/puerto.png)
+
+Ahora instale las dependencias del proyecto.
+```bash
+npm install
+```
+
+Ejecute el servidor y acceda a la web en un navegador.
+
+> Note el uso de un puerto privilegiado
+
+![Web](./docs/static/web.png)
 
