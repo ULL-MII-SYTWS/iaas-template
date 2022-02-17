@@ -6,6 +6,8 @@ Esta práctica tiene por objetivo configurar la máquina personal del *IAAS*.
 
 **Alumno**: [Andrés Pérez Castellano](https://github.com/AndPerCast)
 
+<br>
+
 ## Configuración inicial
 
 ### Reclamar una máquina virtual
@@ -17,7 +19,7 @@ obtenga la dirección *ip* desde el panel de administración.
 
 Dentro de la red universitaria (o usando una *VPN*) conéctese a su máquina remota.
 ```bash
-# Sustituya <ipaddr> por la dirección real
+# Sustituya <ipaddr> por la dirección real.
 ssh usuario@<ipaddr>
 ```
 
@@ -25,7 +27,7 @@ ssh usuario@<ipaddr>
 
 Para simplificar el mecanismo de conexión, haga lo siguiente.
 
-Genere una clave *ssh* en su máquina local
+Genere una clave *ssh* en su máquina local.
 ```bash
 ssh-keygen -t rsa
 ```
@@ -49,3 +51,55 @@ sudo apt autoremove
 ```
 
 ![Update](./docs/static/update.png)
+
+Instale los siguientes paquetes:
+- git
+- GitHub CLI
+- nvm
+- nodeJS
+- ESLint
+- starship prompt
+
+![Versions](./docs/static/versions.png)
+
+### Git
+
+Configure Git con usuario, email y aliases para operaciones comunes.
+```bash
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global user.email <email>
+git config --global user.name <name>
+```
+
+![Git](./docs/static/git.png)
+
+Para poder enlazar repositorios remotos, haga lo siguiente.
+
+Genere una clave *ssh* en su máquina remota.
+```bash
+ssh-keygen -t rsa
+```
+
+Añadala a sus claves de *GitHub*.
+
+![Claves](./docs/static/claves.png)
+
+### NVM & Node
+
+Mediante el gestor de paquetes [nvm](https://github.com/nvm-sh/nvm), se puede instalar [NodeJS](https://nodejs.org/es/) fácilmente.
+
+```bash
+# Instalar nvm con curl.
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# Instalar node con nvm.
+nvm install node
+```
+
+### Shell Prompt
+
+## Desplegar una aplicación web
+
