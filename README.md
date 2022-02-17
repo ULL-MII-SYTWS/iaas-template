@@ -130,3 +130,10 @@ Ejecute el servidor y acceda a la web en un navegador.
 
 ![Web](./docs/static/web.png)
 
+
+Para convertir la app en un servicio duradero.
+```bash
+nohup sudo -b node hello.js
+```
+
+![Servicio](./docs/static/servicio.png)
