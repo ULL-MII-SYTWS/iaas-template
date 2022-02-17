@@ -21,6 +21,26 @@ Dentro de la red universitaria (o usando una *VPN*) conéctese a su máquina rem
 ssh usuario@<ipaddr>
 ```
 
+### Conexión remota
+
+Para simplificar el mecanismo de conexión, haga lo siguiente.
+
+Genere una clave *ssh* en su máquina local
+```bash
+ssh-keygen -t rsa
+```
+
+Concatene la clave pública `~/.ssh/id_rsa.pub` con aquellas aceptadas en la máquina remota.
+```bash
+cat .ssh/id_rsa.pub | ssh usuario@<ipaddr> 'cat >> .ssh/authorized_keys'
+```
+
+Ahora puede iniciar una sesión remota rápidamente y sin introducir contraseña.
+
+![Contraseña](./docs/static/contraseña.png)
+
+### Actualizar e instalar paquetes
+
 Cambie la contraseña por defecto. Actualice el sistema.
 ```bash
 sudo apt update
